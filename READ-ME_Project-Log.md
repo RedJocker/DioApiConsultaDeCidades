@@ -48,4 +48,11 @@
     - escrita do repository CityRepository
     - escrita do service CityService
     - escrita do endpoint GET /countries no resource CountryResource
+
+- implementação do endpoint GET /cities/{id}
+    - adição do novo endpoint no CityResource
+    - adição do CityService.findByID()
+    - adição da exception CityIdNotFoundException
+    - adição da exceptionHandler CityExceptionHandler
+    
     

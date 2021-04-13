@@ -1,6 +1,7 @@
 package org.dioproject.citiesapi.cities.services;
 
 import org.dioproject.citiesapi.cities.entities.City;
+import org.dioproject.citiesapi.cities.exeptions.CityIdNotFoundException;
 import org.dioproject.citiesapi.cities.repositories.CityRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CityService {
 
+    private final String cityIdNotFoundMessageTemplate = "City with id %d was not found";
     private final CityRepository cityRepository;
 
     public CityService(CityRepository cityRepository) {
@@ -17,5 +19,13 @@ public class CityService {
 
     public Page<City> findAll(Pageable page) {
         return cityRepository.findAll(page);
+    }
+
+    public City findById(Long id) {
+
+        return cityRepository.findById(id)
+                .orElseThrow(() ->
+                        new CityIdNotFoundException(String.format(cityIdNotFoundMessageTemplate, id))
+                );
     }
 }
