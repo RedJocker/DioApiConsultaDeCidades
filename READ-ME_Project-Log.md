@@ -24,3 +24,15 @@
     - adição do CountryService.findByID()
     - adição da exception CountryIdNotFoundException
     - adição da exceptionHandler CountryExceptionHandler
+
+- implementação de endpoint GET /states
+    - inclusão de dependência hibernate-types
+        - ensina hibernate a incluir json no postgres entre outros tipos
+    - escrita da entity State
+        - relacionamento many to one State -> Country
+        - uso da dependência adicionada para transformar json.array de ddd em list
+    - escrita do repository StateRepository
+    - escrita do service StateService
+    - escrita do endpoint GET /states no resource StateResource
+        - uso do recurso de paginação
+    
