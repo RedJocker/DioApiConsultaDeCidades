@@ -5,8 +5,11 @@ import org.dioproject.citiesapi.countries.services.CountryService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Optional;
 
 
 @RestController
@@ -23,6 +26,11 @@ public class CountryResource {
     @GetMapping
     public Page<Country> countries(Pageable page) {
         return countryService.findAll(page);
+    }
+
+    @GetMapping("/{id}")
+    public Country getOne(@PathVariable Long id) {
+        return countryService.findById(id);
     }
 }
 

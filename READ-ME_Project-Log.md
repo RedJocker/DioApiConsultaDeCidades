@@ -18,3 +18,9 @@
     - adição de propriedades no application.properties para ativar modo verboso da consulta no sql
         - spring.jpa.show-sql=true
         - spring.jpa.properties.hibernate.format_sql=true
+        
+- implementação do endpoint GET /countries/{id} (countries.resources.CountryResource.getOne())
+    - adição do novo endpoint no CountryResource
+    - adição do CountryService.findByID()
+    - adição da exception CountryIdNotFoundException
+    - adição da exceptionHandler CountryExceptionHandler
