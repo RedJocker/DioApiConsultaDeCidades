@@ -1,0 +1,26 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    ports: 
+        - 5432:5432
+    volumes: 
+        - type: volume
+          source: dbdata
+          target: /var/lib/postgresql/data
+    environment: 
+        POSTGRES_USER: "postgres_user_city"
+        POSTGRES_PASSWORD: "super_password"
+        POSTGRES_DB: "cities"
+
+volumes:
+    dbdata:
+    
+    
+    
+
+    
