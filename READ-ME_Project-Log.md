@@ -35,4 +35,17 @@
     - escrita do service StateService
     - escrita do endpoint GET /states no resource StateResource
         - uso do recurso de paginação
+
+- implementação do endpoint GET /cities
+    - mudança no build.gradle
+        - mudar o postgres de runtimeOnly para implementation
+            - possibilita uso de tipos do postgres
+    - escrita da customType PointType
+        - vai facilitar o uso dos dados de geolocalização
+        - utiliza PgPoint do postgres
+    - escrita da entity City
+        - fazendo uso da PointType
+    - escrita do repository CityRepository
+    - escrita do service CityService
+    - escrita do endpoint GET /countries no resource CountryResource
     
