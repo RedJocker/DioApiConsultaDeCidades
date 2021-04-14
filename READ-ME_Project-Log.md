@@ -65,6 +65,15 @@
         - distanceByCube
     - escrita do DistanceService
     - escrita do DistanceResource com os novos endpoints
+
+- deploy no heroku
+    - addon postgres adicionado no heroku
+    - database do heroku populado manualmente pelo console do heroku
+    - criado application-heroku.properties
+        - cria perfil de produção
+        - configura a conexão com o banco de dados do heroku
+    - criado Procfile
+        - configura a run no heroku para rodar com o perfil de produção
     
     
     
