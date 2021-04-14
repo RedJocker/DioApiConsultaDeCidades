@@ -55,4 +55,16 @@
     - adição da exception CityIdNotFoundException
     - adição da exceptionHandler CityExceptionHandler
     
+- implementação dos endpoints GET /distances/by-cube e GET /distances/by-points
+    - extensão da CityRepository
+        - query findGeolocationById
+        - query distanceByCube
+        - query distanceByPoints
+    - extensão da CityService
+        - distanceByPoints
+        - distanceByCube
+    - escrita do DistanceService
+    - escrita do DistanceResource com os novos endpoints
+    
+    
     
