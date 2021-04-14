@@ -74,6 +74,10 @@
         - configura a conexão com o banco de dados do heroku
     - criado Procfile
         - configura a run no heroku para rodar com o perfil de produção
+
+- entregar projeto na Dio
+    - escrita do README.md
+    - subir projeto na plataforma Dio
     
     
     
